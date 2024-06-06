@@ -2,7 +2,7 @@
 Colours to use:
 
 green #557c3e
-maroon #c61e24
+maroon #61122f
 yellow #f6b319
 grey #363636
 */
@@ -20,7 +20,7 @@ oxygen and lora
    font-family: 'Oxygen', sans-serif;
 }
 body{
-   background-color: #c61e24;
+   background-color: #61122f;
 }
 header{
    width: 100%;
@@ -82,7 +82,7 @@ HEADER PART
 }
 .column {
    padding: 5px;
-   color: #c61e24;
+   color: #61122f;
    height: 50px;
    text-decoration: none;
    flex: 1 1 33.333%;
@@ -95,17 +95,17 @@ HEADER PART
 }
 .delivery a, .delivery a:hover{
    text-decoration: none;
-   color: #c61e24;
+   color: #61122f;
 }
 .delivery {
    padding-top: 20px;
    flex: 1 1 20%;
-   color: #c61e24;
+   color: #61122f;
    text-align: end;
 }
 .delivery__number {
    font-size: 26px;
-   color: #c61e24;  
+   color: #61122f;  
 }
 .delivery__info {
    color: #557c3e;
@@ -286,7 +286,7 @@ FOOTER PART
    }
    .column {
       padding: 5px;
-      color: #c61e24;
+      color: #61122f;
       text-decoration: none;
       flex: 1 1 10%;
       text-align: center;
