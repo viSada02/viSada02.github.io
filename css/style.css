@@ -24,74 +24,101 @@ body{
 }
 header{
    width: 100%;
-   height: 180px;
+   min-height: 180px;
    background-color: #f6b319;
 }
 nav{
    display: flex;
+   flex: 1 1 20%;
 }
 h1{
    font-family: "Lora", serif;
    font-weight: 700;
    font-optical-sizing: auto;
    font-style: normal;
-   margin: 20px 0 0 10px 
+   text-shadow: 1px 1px black;
+   padding-top: 20px;
 }
 footer{
    background-color: #363636;
-   height: 180px;
+   min-height: 180px;
+}
+q{
+   display: block;
+   padding-right: 15px;
+   font-style: italic;
+}
+address{
+   font-style: normal;
+}
+a, a:hover, a:active{
+   text-decoration: none;
 }
 .container {
-   width: 1000px;
+   width: 1100px;
    margin: 0 auto;
 }
 .container-flex{
    display: flex;
 }
-.container > a{
-   margin: 15px 0;
+/* 
+---------------------------------------------
+HEADER PART 
+---------------------------------------------
+*/
+.title{
+   flex: 1 1 60%;
+}
+.title__logo{
+   float: left;
+   margin: 15px 10px 0 0;
 }
 .title > a, .title > a:active{
    text-decoration: none;
    color: #557c3e;
 }
 .title > img {
-   margin-left: 10px;
    vertical-align: -7px;
 }
 .column {
-   margin: 30px 0 0 10px;
+   padding: 5px;
    color: #c61e24;
-}
-.column:first-child{
-   margin-left: 100px;
-}
-.column img{
-   margin-left: 10px;
-}
-.column:last-child img{
-   margin-left: 17px;
-}
-.column > a, .column > a:hover{
+   height: 50px;
    text-decoration: none;
-   color: #c61e24;
+   flex: 1 1 33.333%;
+   margin-top: 25px;
+   text-align: center;
 }
-.delivery {
-   margin: 25px 0 0 79px
+.column:hover{
+   background-color: white;
+   text-decoration: none;
 }
 .delivery a, .delivery a:hover{
    text-decoration: none;
    color: #c61e24;
 }
-.delivery__number {
-   font-size: 20px;
+.delivery {
+   padding-top: 20px;
+   flex: 1 1 20%;
    color: #c61e24;
+   text-align: end;
+}
+.delivery__number {
+   font-size: 26px;
+   color: #c61e24;  
 }
 .delivery__info {
-   text-align: end;
    color: #557c3e;
 }
-
+/* 
+---------------------------------------------
+MAIN PART 
+---------------------------------------------
+*/
+iframe{
+   width: 100%;
+   height: 100%;
+}
 .main {
    margin-bottom: 20px;
 }
@@ -105,34 +132,46 @@ footer{
    display: flex;
 }
 .main__column {
-   flex: 0 0 32%;
+   flex: 1 1 32%;
    border-radius: 10px;
    border: 1px black solid;
    text-decoration: none;
+   position: relative;
+   min-height: 200px;
+   width: 100%;
 }
 .main__column--menu {
    background: url('../images/chinese_meat.jpg') no-repeat;
    background-size: cover;
+   background-position: center;
 }
 .main__column--specials {
    background: url('../images/chinese_pasta.jpeg') no-repeat;
    background-size: cover;
+   background-position: center;
    margin-left: 20px;
 }
 .main__column--map {
-   background: url('../images/maps.webp') no-repeat;
-   background-size: cover;
    margin-left: 20px;
+   border: 0;
 }
 .main__text {
+   position: absolute;
+   width: 100%;
+   bottom: 0;
    background-color: rgb(0, 0, 0, 0.4);
-   margin-top: 200px;
    font-size: 24px;
    color: white;
    text-align: center;
    border-radius: 10px;
+   padding: 5px 0;
 }
 
+/* 
+---------------------------------------------
+FOOTER PART 
+---------------------------------------------
+*/
 .footer__row {
    color: white;
    display: flex;
@@ -154,7 +193,163 @@ footer{
    font-size: 12px;
    color: #557c3e;
 }
-.footer__column--quote{
-   font-style: italic;
-   padding-right: 10px;
+
+@media (min-width: 992px) and (max-width: 1200px){
+   .container{
+      width: 900px;
+   }
+}
+@media (min-width: 768px) and (max-width: 991px){
+   .container{
+      width: 700px;
+   }
+   .main__column{
+      min-height: 150px;
+   }
+   .main__text {
+      font-size: 20px;
+   }
+   .delivery__number{
+      font-size: 18px;
+   }
+}
+@media (min-width: 576px) and (max-width: 767px){
+   .container{
+      width: 515px;
+      padding-bottom: 5px;
+   }
+   header{
+      min-height: 140px;
+   }
+   .title{
+      flex: 1 1 30%;
+   }
+   .title__logo, .title__logo > img{
+      width: 0px;
+      height: 0px;
+      margin: 0;
+   }
+   h1{
+      font-size: 26px;
+   }
+   .main__column{
+      min-height: 100px;
+   }
+   .main__text {
+      font-size: 16px;
+   }
+   .delivery{
+      padding-top: 26px;
+   }
+   .delivery__number{
+      font-size: 18px;
+   }
+   .delivery__info{
+      font-size: 10px;
+   }
+}
+@media (max-width: 575px){
+   .container{
+      width: 100%;
+   }
+   header{
+      min-height: 80px;
+      position: relative;
+   }
+   .title{
+      flex: 1 1 70%;
+   }
+   .title > img{
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+   }
+   .title > span{
+      font-size: 8px;
+      vertical-align: middle;
+   }
+   .title__logo, .title__logo > img{
+      width: 0px;
+      height: 0px;
+      margin: 0;      
+   }
+   h1{
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+      padding-left: 10px;
+   }
+   nav{
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+   }
+   .column {
+      padding: 5px;
+      color: #c61e24;
+      text-decoration: none;
+      flex: 1 1 10%;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+   }
+   .column > img{
+      width: 0px;
+      height: 0px;
+      margin: 0;
+   }
+   .column:hover{
+      background-color: transparent;
+      text-decoration: none;
+   }
+   .column span:hover{
+      background-color: white;
+      border: 3px solid white;
+   }
+   .delivery{
+      padding-top: 6px;
+      flex: 1 1 30%;
+      padding-right: 10px;
+   }
+   .delivery__number{
+      font-size: 14px;
+   }
+   .delivery__info{
+      font-size: 8px;
+   }
+   .main__photo{
+      padding: 0 10px;
+   }
+   .main__row{
+      flex-direction: column;
+      padding: 0 60px;
+   }
+   .main__column{
+      min-height: 200px;
+   }
+   .main__column--specials {
+      margin-left: 0;
+      margin-top: 20px;
+   }
+   .main__column--map {
+      margin-left: 0;
+      margin-top: 20px;
+   }
+   .main__text {
+      font-size: 14px;
+   }
+   footer{
+      padding: 0 10px;
+   }
+   .footer__column {
+      flex: 1 1 33.333%;
+      padding-top: 20px;
+      font-size: 10px;
+   }
+   .footer__column--title {
+      font-size: 14px;
+   }
+   .footer__column--notification {
+      font-size: 8px;
+   }
 }
